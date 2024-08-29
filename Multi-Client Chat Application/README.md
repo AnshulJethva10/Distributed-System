@@ -60,21 +60,21 @@ This is a simple multi-client chat application implemented in Java. It allows mu
 
 ### Design Decisions
 
-1. **Multi-threading**: We used Java's built-in threading capabilities to handle multiple clients concurrently. Each client connection is managed by a separate `ClientHandler` thread.
+1. **Multi-threading**: I used Java's built-in threading capabilities to handle multiple clients concurrently. Each client connection is managed by a separate `ClientHandler` thread.
 
 2. **BufferedReader and BufferedWriter**: These classes were chosen for efficient reading and writing of text-based messages over the network.
 
 3. **ArrayList for client management**: An `ArrayList` of `ClientHandler` objects is used to keep track of all connected clients, allowing for easy broadcasting and private messaging.
 
-4. **Simple text-based protocol**: We implemented a straightforward text-based protocol for ease of understanding and debugging. Special commands like `/quit` and `/@` for private messaging are prefixed with `/` to distinguish them from regular messages.
+4. **Simple text-based protocol**: I implemented a straightforward text-based protocol for ease of understanding and debugging. Special commands like `/quit` and `/@` for private messaging are prefixed with `/` to distinguish them from regular messages.
 
 ### Challenges Faced
 
-1. **Concurrent access to shared resources**: Ensuring thread-safe access to the shared list of client handlers was a challenge. We addressed this by using synchronization when necessary.
+1. **Concurrent access to shared resources**: Ensuring thread-safe access to the shared list of client handlers was a challenge. I addressed this by using synchronization when necessary.
 
 2. **Graceful client disconnection**: Implementing a clean disconnection process, especially when a client abruptly closes the connection, required careful handling of exceptions and proper resource cleanup.
 
-3. **Asynchronous message handling**: Balancing the ability to send and receive messages simultaneously while maintaining a responsive user interface was tricky. We solved this by using separate threads for message sending and receiving.
+3. **Asynchronous message handling**: Balancing the ability to send and receive messages simultaneously while maintaining a responsive user interface was tricky. I solved this by using separate threads for message sending and receiving.
 
 4. **Private messaging implementation**: Implementing private messaging required careful parsing of user input and efficient lookup of recipient clients.
 
