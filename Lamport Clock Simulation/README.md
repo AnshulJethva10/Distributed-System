@@ -1,4 +1,4 @@
-# Lamport Clock Simulation
+# Lamport's Logical Clock
 
 This project implements a distributed system simulation using Lamport's Logical Clock algorithm. It demonstrates how logical time is maintained across multiple processes in a distributed environment.
 
